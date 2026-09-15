@@ -1,0 +1,7 @@
+{
+  "name": "where-should-we-eat",
+  "private": true,
+  "dependencies": {
+    "@netlify/database": "latest"
+  }
+}
