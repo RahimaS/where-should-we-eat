@@ -131,3 +131,205 @@ h2{font-size:clamp(46px,7vh,72px);line-height:.96;margin:12px 0 22px}
 .tagline span{height:1px;width:72px;background:rgba(23,20,18,.62)}
 .tagline p{margin:0;font-size:9px;letter-spacing:.17em;line-height:1.65;white-space:nowrap}
 @media(max-width:699px){.tagline{gap:10px;margin-top:18px}.tagline span{width:45px}.tagline p{font-size:8px}}
+
+
+/* =========================================================
+   REFERENCE-MATCH OVERRIDES
+   Designed to match the approved visual on iPad + iPhone.
+   ========================================================= */
+:root{--wine:#8C1823;--paper2:#f8f1e7;--charcoal:#191613}
+
+#picker{
+  min-height:100svh;
+  height:100svh;
+  padding:72px 14px 18px;
+  overflow:hidden;
+}
+.stationery{
+  --scene-h:min(86svh,860px);
+  width:min(94vw,850px);
+  height:var(--scene-h);
+  margin:0 auto;
+}
+.lace{
+  width:112%;
+  height:112%;
+  object-fit:contain;
+  filter:drop-shadow(0 13px 17px rgba(55,45,13,.12));
+}
+.paper{
+  width:82%;
+  height:76%;
+  border-radius:28px;
+  padding:68px 56px 34px;
+  background:var(--paper2);
+  box-shadow:0 18px 34px rgba(48,39,12,.17);
+}
+.paper:after{opacity:.18}
+
+/* more binder-clip-like: silver loop + two metal jaws */
+.clip{
+  top:1.2%;
+  width:154px;
+  height:132px;
+  filter:drop-shadow(0 5px 3px rgba(0,0,0,.25));
+}
+.clip:before{
+  left:17px;right:17px;top:62px;height:59px;
+  border:0;border-radius:4px;
+  background:
+    linear-gradient(90deg,
+      #5d5d5b 0 4%,#d9d8d2 5% 15%,#7c7c79 16% 19%,
+      transparent 20% 42%,
+      #656562 43% 47%,#e0dfd8 48% 58%,#747471 59% 62%,
+      transparent 63% 80%,
+      #5d5d5b 81% 85%,#deddd7 86% 96%,#6d6d69 97% 100%);
+  box-shadow:inset 0 -10px 0 #4c4c49,0 3px 2px #0003;
+}
+.clip:after{
+  top:0;width:74px;height:86px;
+  border:7px double #666662;
+  border-bottom-color:#8a8984;
+  border-radius:52% 52% 34% 34%;
+  background:transparent;
+  box-shadow:inset 0 0 0 2px #e6e4dc,0 1px 1px #0003;
+}
+.clip{background:
+  linear-gradient(74deg,transparent 0 39%,#6c6c69 40% 43%,#e5e4dd 44% 46%,transparent 47%) 13px 43px/64px 70px no-repeat,
+  linear-gradient(106deg,transparent 0 39%,#6c6c69 40% 43%,#e5e4dd 44% 46%,transparent 47%) 77px 43px/64px 70px no-repeat;
+}
+
+/* Calligraphic headline: use available cursive fallbacks, then serif fallback.
+   Larger, looser, two-line composition like the approved reference. */
+h1{
+  font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Brush Script MT","Segoe Script",cursive;
+  font-style:normal;
+  font-weight:400;
+  font-size:clamp(64px,8.4vh,94px);
+  line-height:.82;
+  letter-spacing:-.035em;
+  max-width:620px;
+  margin:0 auto 24px;
+  color:var(--wine);
+}
+.micro{margin-bottom:22px}
+
+/* Vintage burgundy fork + knife with tied ribbon */
+.cutlery-art{
+  position:relative;
+  width:104px;height:122px;
+  margin:0 auto 22px;
+  color:var(--wine);
+}
+.fork-art{
+  position:absolute;left:25px;top:2px;width:24px;height:104px;
+  border-left:3px solid var(--wine);
+}
+.fork-art:after{
+  content:"";position:absolute;left:-2px;top:32px;width:17px;height:21px;
+  border:3px solid var(--wine);border-top:0;border-radius:0 0 10px 10px;
+}
+.fork-art span{
+  position:absolute;top:0;width:2px;height:35px;background:var(--wine);border-radius:2px;
+}
+.fork-art span:nth-child(1){left:-8px}.fork-art span:nth-child(2){left:-2px}
+.fork-art span:nth-child(3){left:4px}.fork-art span:nth-child(4){left:10px}
+.knife-art{
+  position:absolute;right:25px;top:1px;width:18px;height:106px;
+  border-right:3px solid var(--wine);
+}
+.knife-art:before{
+  content:"";position:absolute;right:-3px;top:0;width:18px;height:52px;
+  border:2px solid var(--wine);border-right:3px solid var(--wine);
+  border-radius:75% 18% 8% 52%;
+}
+.ribbon-art{position:absolute;left:50%;top:52px;width:62px;height:45px;transform:translateX(-50%)}
+.ribbon-art:before,.ribbon-art:after{
+  content:"";position:absolute;top:0;width:31px;height:22px;border:3px solid var(--wine);
+}
+.ribbon-art:before{right:29px;border-radius:65% 18% 65% 25%;transform:rotate(13deg)}
+.ribbon-art:after{left:29px;border-radius:18% 65% 25% 65%;transform:rotate(-13deg)}
+.ribbon-art i,.ribbon-art b{
+  position:absolute;top:19px;width:36px;height:3px;background:var(--wine);transform-origin:0 50%;
+}
+.ribbon-art i{left:28px;transform:rotate(35deg)}
+.ribbon-art b{left:32px;transform:rotate(145deg)}
+
+.primary{
+  width:min(500px,96%);
+  padding:19px 28px;
+  font-size:12px;
+  letter-spacing:.22em;
+}
+.tagline{margin-top:22px}
+.tagline span{width:92px}
+.tagline p{font-size:9px}
+
+/* iPad landscape */
+@media (min-width:700px) and (orientation:landscape){
+  #picker{padding-top:48px}
+  .stationery{
+    --scene-h:min(91svh,820px);
+    width:min(calc(var(--scene-h)*1.03),69vw);
+  }
+  .lace{width:120%;height:120%}
+  .paper{
+    width:84%;
+    height:74%;
+    padding:58px 54px 30px;
+  }
+  .clip{top:-1.5%;transform:translateX(-50%) scale(1.03)}
+  h1{
+    font-size:clamp(62px,8.7vh,86px);
+    line-height:.80;
+    max-width:590px;
+    margin-bottom:18px;
+  }
+  .micro{margin-bottom:17px}
+  .cutlery-art{transform:scale(.88);margin-top:-4px;margin-bottom:8px}
+  .primary{padding:17px 28px}
+  .tagline{margin-top:17px}
+}
+
+/* iPad portrait */
+@media (min-width:700px) and (orientation:portrait){
+  .stationery{width:min(92vw,790px)}
+  .paper{width:82%;height:75%}
+  .lace{width:115%;height:115%}
+}
+
+/* iPhone portrait */
+@media (max-width:699px) and (orientation:portrait){
+  #picker{padding-top:56px}
+  .stationery{width:100%;height:min(88svh,720px)}
+  .lace{width:122%;height:112%}
+  .paper{
+    width:86%;height:76%;
+    padding:55px 22px 25px;
+    border-radius:22px;
+  }
+  .clip{top:3%;transform:translateX(-50%) scale(.70)}
+  h1{
+    font-size:clamp(51px,7.4vh,67px);
+    line-height:.82;
+    margin-bottom:15px;
+  }
+  .micro{font-size:7px;margin-bottom:14px}
+  .cutlery-art{transform:scale(.70);margin-top:-12px;margin-bottom:-6px}
+  .primary{width:96%;padding:15px 19px;font-size:9px}
+  .tagline{margin-top:16px;gap:9px}.tagline span{width:42px}.tagline p{font-size:7px}
+}
+
+/* iPhone landscape */
+@media (max-height:500px) and (orientation:landscape){
+  #picker{height:auto;min-height:430px;padding-top:34px;overflow:auto}
+  .stationery{width:390px;height:420px}
+  .paper{width:82%;height:78%;padding:37px 22px 15px}
+  .lace{width:118%;height:118%}
+  .clip{top:-5%;transform:translateX(-50%) scale(.56)}
+  h1{font-size:39px;line-height:.8;margin-bottom:6px}
+  .micro{font-size:5px;margin-bottom:6px}
+  .cutlery-art{transform:scale(.46);margin-top:-27px;margin-bottom:-29px}
+  .primary{padding:9px 14px;font-size:7px}
+  .tagline{margin-top:8px}.tagline p{font-size:5px}.tagline span{width:32px}
+}
