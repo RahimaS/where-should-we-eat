@@ -333,3 +333,96 @@ h1{
   .primary{padding:9px 14px;font-size:7px}
   .tagline{margin-top:8px}.tagline p{font-size:5px}.tagline span{width:32px}
 }
+
+
+/* =========================================================
+   REAL IMAGE ASSETS — clip.png + forkandknife.png
+   These override the old CSS-drawn decorations.
+   ========================================================= */
+
+/* Hide any legacy CSS artwork if older markup survives. */
+.clip,
+.cutlery-art,
+.utensils {
+  display: none !important;
+}
+
+.clip-image {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: -3.5%;
+  transform: translateX(-50%);
+  width: clamp(128px, 19%, 170px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 6px 5px rgba(0,0,0,.22));
+}
+
+.cutlery-image {
+  display: block;
+  width: clamp(118px, 25%, 180px);
+  max-height: 150px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto clamp(15px, 2.2vh, 23px);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* iPad landscape */
+@media (min-width:700px) and (orientation:landscape) {
+  .clip-image {
+    top: -4%;
+    width: clamp(135px, 20%, 175px);
+  }
+  .cutlery-image {
+    width: clamp(120px, 23%, 165px);
+    max-height: 132px;
+    margin-top: -2px;
+    margin-bottom: 12px;
+  }
+}
+
+/* iPad portrait */
+@media (min-width:700px) and (orientation:portrait) {
+  .clip-image {
+    top: -2.5%;
+    width: clamp(145px, 21%, 180px);
+  }
+  .cutlery-image {
+    width: clamp(135px, 25%, 180px);
+  }
+}
+
+/* iPhone portrait */
+@media (max-width:699px) and (orientation:portrait) {
+  .clip-image {
+    top: 0;
+    width: clamp(100px, 29%, 130px);
+  }
+  .cutlery-image {
+    width: clamp(105px, 34%, 145px);
+    max-height: 115px;
+    margin-top: -5px;
+    margin-bottom: 7px;
+  }
+}
+
+/* Small/landscape phones */
+@media (max-height:500px) and (orientation:landscape) {
+  .clip-image {
+    top: -5%;
+    width: 92px;
+  }
+  .cutlery-image {
+    width: 92px;
+    max-height: 70px;
+    margin-top: -8px;
+    margin-bottom: 2px;
+  }
+}
