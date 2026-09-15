@@ -107,7 +107,7 @@ $("add").onsubmit=async e=>{
 };
 
 window.toggleVisit=async id=>{
-  const r=data.find(x=>x.id===id);
+  const r=data.find(x=>String(x.id)===String(id));
   if(!r)return;
   try{
     const payload=await api("POST",{action:"visit",id,visited:!r.visited});
