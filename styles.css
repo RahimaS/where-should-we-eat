@@ -426,3 +426,19 @@ h1{
     margin-bottom: 2px;
   }
 }
+
+/* iPhone — Our List safe-area fix */
+@media (max-width:699px) and (orientation:portrait) {
+  .listPaper {
+    width: calc(100% - 32px);
+    max-width: 650px;
+    margin: 76px auto 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 22px;
+  }
+
+  .listHead h3 {
+    font-size: 50px;
+  }
+}
